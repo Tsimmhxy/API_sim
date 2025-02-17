@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="476395731_1880439359030310_3720587870840346145_n.jpg" alt="" width="300px" height="500px">
+
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+        <label for="amount">จำนวนเงินที่โอน:</label>
+        <input type="number" name="amount" required><br>
+    
+        <label for="transfer_date">วันที่โอน:</label>
+        <input type="date" name="transfer_date" required><br>
+    
+        <label for="slip">อัปโหลดสลิปการโอน:</label>
+        <input type="file" name="slip" accept="image/*" required><br>
+    
+        <button type="submit" name="submit">อัปโหลด</button>
+    </form>
+
+</body>
+</html>

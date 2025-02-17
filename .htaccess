@@ -1,0 +1,29 @@
+# เปิดการเข้าถึงไฟล์ .php
+<Files "*.php">
+    Require all granted
+</Files>
+
+# ตั้งค่า CORS สำหรับอนุญาตการทำงานระหว่างโดเมน
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+
+# ป้องกันการเข้าถึงไฟล์ .htaccess
+<Files ".ht*">
+    Require all denied
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^.*$ - [L]
+</IfModule>
+
+<Files "shipping.php">
+    Require all granted
+</Files>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} ^(PUT)$
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

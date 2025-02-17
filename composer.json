@@ -1,0 +1,7 @@
+{
+    "require": {
+        "midtrans/midtrans-php": "^2.6",
+        "paypal/rest-api-sdk-php": "^1.14",
+        "endroid/qr-code": "^4.8"
+    }
+}
